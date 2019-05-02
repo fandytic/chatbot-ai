@@ -1,122 +1,32 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+          <title>Rasa Chatbot</title>
+            <meta charset="UTF-8">
+      <meta name=viewport content="width=device-width, initial-scale=1">
 
-<!-- Mirrored from rasa.com/docs/get_started_step1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Apr 2019 09:27:52 GMT -->
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Step 1: Understand the Rasa Stack</title>
-  <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <script type="text/javascript" src="_static/jquery.js"></script>
-  <script type="text/javascript" src="_static/underscore.js"></script>
-  <script type="text/javascript" src="_static/doctools.js"></script>
-  <script type="text/javascript" src="cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <!-- CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="_static/xq-light.css" type="text/css" />
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  <link rel="stylesheet" href="_static/fontawesome/css/fontawesome-all.css" type="text/css" />
-  <script type="text/javascript" src="storage.googleapis.com/docs-theme/clipboard.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+  </head>
+  <body>
 
-</head>
-<body>
-  <div class="nav-top">
-    <div class="nav-container">
-      <a href="https://rasa.com/docs" class="brand-link">
-        <h1 class="brand">
-          <img src="logoindi.png" height="40px" title="Rasa logo" alt="Rasa logo">
-        </h1>
-        <span class="logo extension">docs</span>
-      </a>
-      <ul class="nav">
-        <li><a href=https://rasa.com/docs/nlu/>NLU</a></li>        
-        <li><a href=https://rasa.com/docs/core/>Core</a></li>
-        <li><a href=https://rasa.com/docs/platform/>Platform</a></li>
-        <li>
-          <a href="https://github.com/rasaHQ/" target="_blank"><button class="button btn-ghost btn-small">GitHub</button></a>
-        </li>
-        <li>
-          <a href="https://forum.rasa.com/" target="_blank"><button class="button btn-small">Ask the Community</button></a>
-        </li>
-      </ul>
-    </div>
-  </div>
+      <!-- chatbot code -->
+          <mybot></mybot>
+    
 
-  <!-- consent-banner -->
-  <div class="consent-banner">
-    <div class="container">
-      <img class="cookie-icon" src="https://rasa.com/docs/_static/cookie.svg" alt="cookie">
-      <p>
-        Ini adalah uji coba tampilan chatbot
-        <a class="agree" href="#">By Fandy</a>.
-      </p>
-    </div>
-  </div>
-</div>
+    <!--container end-->
 
-<script src="assets/js/js.cookies.js"></script>
-<script async defer src="buttons.github.io/buttons.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-87333416-1"></script>
-<script type="text/javascript" src="assets/js/userId.js"></script>
+    
+    <!--JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<script type="text/javascript">
-  var clipboard = new ClipboardJS('.copyable');
-  clipboard.on('success', function(e) {
-    gtag('event', e.action, {
-      'event_category': 'code',
-      'event_label': e.text
-    });
-    const id = e.text.replace(' ','-');
-    document.getElementById(id).classList.add('visible');
-    setTimeout(function(){
-      document.getElementById(id).classList.remove('visible');},
-      800
-      );
-  });
-  clipboard.on('error', function(e) {
-    console.log(e);
-  });
 
-  /* Consent Manager */
-  $(document).ready(function() {
-    if(!document.cookie.match(/^(.*;)?\s*rasa-cookie-consent\s*=\s*[^;]+(.*)?$/))
-    $('.consent-banner').addClass('visible');
 
-    $('.consent-banner .agree').click(function(e){
-      e.preventDefault();
-      var CookieDate = new Date;
-      CookieDate.setFullYear(CookieDate.getFullYear() + 1);
-      document.cookie = 'rasa-cookie-consent=true; expires=' + CookieDate.toUTCString() + '; domain=.rasa.com';
-      $('.consent-banner').remove();
-    });
-  });
-</script>
-
-  <script type="text/javascript" src="assets/js/u-info.js"></script>
-  <div id="webchat">
-    <script src="_static/rasa-webchat.js"></script>
-    <script>
-     WebChat.default.init({
-       selector: "#webchat",
-       initPayload: "/get_started_step1",
-       interval: 500,
-       socketUrl: "https://website-demo.rasa.com/",
-       socketPath: "/socket.io",
-       title: "Sara",
-       subtitle: "I'm still in development",
-       profileAvatar: "https://rasa.com/assets/img/demo/sara_avatar.png",
-       showCloseButton: true,
-       fullScreenMode: false,
-       params: {
-        storage: "local"
-      }})
-    </script>
-  </div>
-</body>
-
-<!-- Mirrored from rasa.com/docs/get_started_step1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Apr 2019 09:28:09 GMT -->
+    <script src="script.js"></script>
+  </body>
 </html>
