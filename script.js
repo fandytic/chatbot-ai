@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	
+
 	//Widget Code
 	var bot = '<div class="chatCont" id="chatCont">' +
 		'<div class="bot_profile">' +
@@ -15,7 +15,7 @@ $(document).ready(function () {
 		'<div class="bounce2"></div>' +
 		'<div class="bounce3"></div>' +
 		'</div>' +
-		'<input type="text" id="chat-input" autocomplete="off" placeholder="Start Typing here..."' + 'class="form-control bot-txt"/>' +
+		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..."' + 'class="form-control bot-txt"/>' +
 		'</div>' +
 		'</div><!--chatCont end-->' +
 
@@ -166,7 +166,6 @@ $(document).ready(function () {
 			scrollToBottomOfResults();
 		}, 1000);
 	}
-
 
 	// on click of suggestions get value and send to API.AI
 	$(document).on("click", ".suggestion span", function () {
