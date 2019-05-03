@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+	
 	//Widget Code
 	var bot = '<div class="chatCont" id="chatCont">' +
 		'<div class="bot_profile">' +
@@ -52,11 +52,7 @@ $(document).ready(function () {
 		$('.chatForm').toggle();
 	});
 
-
-
-
-	// on input/text enter--------------------------------------------------------------------------------------
-	
+	// on input/text enter--------------------------------------------------------------------------------------	
 	$('#chat-input').on('keyup keypress', function (e) {
 		var keyCode = e.keyCode || e.which;
 		var text = $("#chat-input").val();
@@ -74,11 +70,8 @@ $(document).ready(function () {
 		}
 	});
 
-
 	//------------------------------------------- Call the RASA API--------------------------------------
 	function send(text) {
-
-
 		$.ajax({
 			url: 'http://localhost:5005/webhooks/rest/webhook', //  RASA API
 			type: 'POST',
@@ -100,29 +93,20 @@ $(document).ready(function () {
 
 					}
 				}
-
 				setBotResponse(data);
-
 			},
 			error: function (xhr, textStatus, errorThrown) {
 				console.log('Error in Operation');
 				setBotResponse('error');
 			}
 		});
-
-
-
-
-
 	}
-
 
 	//------------------------------------ Set bot response in result_div -------------------------------------
 	function setBotResponse(val) {
 		setTimeout(function () {
-
 			if ($.trim(val) == '' || val == 'error') { //if there is no response from bot or there is some error
-				val = 'Sorry I wasn\'t able to understand your Query. Let\' try something else!'
+				val = 'Maaf server tidak merespon'
 				var BotResponse = '<p class="botResult">' + val + '</p><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');
 			} else {
@@ -135,7 +119,6 @@ $(document).ready(function () {
 					} else {
 						msg += '<p class="botResult">' + val[i].text + '</p><div class="clearfix"></div>';
 					}
-
 				}
 				BotResponse = msg;
 				$(BotResponse).appendTo('#result_div');
@@ -144,7 +127,6 @@ $(document).ready(function () {
 			hideSpinner();
 		}, 500);
 	}
-
 
 	//------------------------------------- Set user response in result_div ------------------------------------
 	function setUserResponse(val) {
@@ -156,13 +138,11 @@ $(document).ready(function () {
 		$('.suggestion').remove();
 	}
 
-
 	//---------------------------------- Scroll to the bottom of the results div -------------------------------
 	function scrollToBottomOfResults() {
 		var terminalResultsDiv = document.getElementById('result_div');
 		terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
 	}
-
 
 	//---------------------------------------- Spinner ---------------------------------------------------
 	function showSpinner() {
@@ -172,9 +152,6 @@ $(document).ready(function () {
 	function hideSpinner() {
 		$('.spinner').hide();
 	}
-
-
-
 
 	//------------------------------------------- Buttons(suggestions)--------------------------------------------------
 	function addSuggestion(textToAdd) {
@@ -199,6 +176,4 @@ $(document).ready(function () {
 		$('.suggestion').remove();
 	});
 	// Suggestions end -----------------------------------------------------------------------------------------
-
-
 });
