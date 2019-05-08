@@ -123,6 +123,7 @@ $(document).ready(function () {
 				BotResponse = msg;
 				$(BotResponse).appendTo('#result_div');
 			}
+			
 			scrollToBottomOfResults();
 			hideSpinner();
 		}, 500);
