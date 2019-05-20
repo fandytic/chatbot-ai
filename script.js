@@ -16,7 +16,6 @@ $(document).ready(function () {
 		'<div class="bounce3"></div>' +
 		'</div>' +
 		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..."' + 'class="form-control bot-txt"/>' +
-		'' +
 		'</div>' +
 		'</div><!--chatCont end-->' +
 
