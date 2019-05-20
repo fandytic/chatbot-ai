@@ -402,3 +402,30 @@ mybot .suggestion span:last-child {
   }
 }
 /* MyBot end */
+
+.headerBar{
+    font-size: 25px;
+    color: white;
+    padding: 25px;
+    width: 500px;
+    min-width: 390px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 20px auto 0px auto;
+    background: rgb(226, 118, 30);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.headerBar .title {
+    margin: auto 20px;
+}
+
+.headerBar .user-photo {
+    margin: 0px 0px 0px 10px;
+
+}
+
+.headerBar .user-photo img{
+    width: 100%;
+}
