@@ -28,6 +28,33 @@ a:focus {
   outline: none;
 }
 
+button { 
+  float: right; 
+  position: relative; 
+  top: -53px;
+  right: 20px; 
+}
+
+input[type=button] { 
+  float: right; 
+  position: relative; 
+  top: -53px;
+  right: 20px; 
+}
+
+.button {
+  background-color: rgb(236, 30, 55);
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .width100 {
   width: 100%;
 }
@@ -42,6 +69,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -51,7 +79,6 @@ a:focus {
   outline: none;
   font-family: 'Open Sans', sans-serif;
 }
-
 /* General end*/
 
 
@@ -151,10 +178,10 @@ mybot .bot_p_img {
 
 mybot .chatForm {
   position: absolute;
-  bottom: -65px;
-	right: 0;
+  bottom: -109px;
+	right: -2px;
 	margin-bottom: 0;
-	width: 400px;
+	width: 401px;
   display: none;
 }
 
@@ -169,7 +196,6 @@ mybot .bot-txt:focus {
 }
 
 mybot .resultDiv .botResult {
-
   word-wrap:break-word;
   background: #fff;
   color: #666666;
@@ -253,7 +279,7 @@ mybot .col-hgt {
 }
 
 mybot .chat-txt {
-   background: white;
+  background: white;
   color:black;
   padding: 15px 15px;
   border-radius: 50px;

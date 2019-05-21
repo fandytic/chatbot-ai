@@ -20,7 +20,13 @@ $(document).ready(function () {
 		'<div class="bounce2"></div>' +
 		'<div class="bounce3"></div>' +
 		'</div>' +
-		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..."' + 'class="form-control bot-txt"/>' +
+		'<form>' +
+		//'<div class="form-control bot-txt">' +
+		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..." class="form-control bot-txt"/>' +
+		//'<button class="button" id="chat-input">Kirim</button>' +
+		'<input type="button" id="klik" class="button" value="Kirim">' +
+		//'</div>' +
+		'</form>' +
 		'</div>' +
 		'</div><!--chatCont end-->' +
 
@@ -57,7 +63,25 @@ $(document).ready(function () {
 	});
 
 	// on input/text enter--------------------------------------------------------------------------------------	
-	$('#chat-input').on('keyup keypress', function (e) {
+	$('#chat-input').onclick('keyup keypress', function (e) {
+		var keyCode = e.keyCode || e.which;
+		var text = $("#chat-input").val();
+		if (keyCode === 13) {
+			if (text == "" || $.trim(text) == '') {
+				e.preventDefault();
+				return false;
+			} else {
+				$("#chat-input").blur();
+				setUserResponse(text);
+				send(text);
+				e.preventDefault();
+				return false;
+			}
+		}
+	});
+
+	// on input/text enter--------------------------------------------------------------------------------------	
+	$('#klik').click(function (e) {
 		var keyCode = e.keyCode || e.which;
 		var text = $("#chat-input").val();
 		if (keyCode === 13) {
