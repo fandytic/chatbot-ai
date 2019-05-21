@@ -63,7 +63,7 @@ $(document).ready(function () {
 	});
 
 	// on input/text enter--------------------------------------------------------------------------------------	
-	$('#chat-input').onclick('keyup keypress', function (e) {
+	$('#chat-input').on('keyup keypress', function (e) {
 		var keyCode = e.keyCode || e.which;
 		var text = $("#chat-input").val();
 		if (keyCode === 13) {
