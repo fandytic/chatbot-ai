@@ -3,11 +3,16 @@ $(document).ready(function () {
 	//Widget Code
 	var bot = '<div class="chatCont" id="chatCont">' +
 		'<div class="bot_profile">' +
-		'<img src="logoindi.png" class="bot_p_img">' +
+		'<div class="headerBar">' +
+        //'<div class="user-photo"><img src="logoindi.png"></div>' +
+        //'<p class="title">IndiHome</p>' +
+        '<img src="logohome.png" width="18%">' +
+        '</div>' +
 		'<div class="close">' +
-		'<i class="fa fa-times" aria-hidden="true"></i>' +
+		'<img src="icon.png" width="4%">' +
 		'</div>' +
 		'</div><!--bot_profile end-->' +
+
 		'<div id="result_div" class="resultDiv"></div>' +
 		'<div class="chatForm" id="chat-div">' +
 		'<div class="spinner">' +
@@ -26,7 +31,6 @@ $(document).ready(function () {
 		'</div><!--col-hgt end-->' +
 		'<div class="col-hgt">' +
 		//'<div class="chat-txt">' +
-		'' +
 		'</div>' +
 		'</div><!--col-hgt end-->' +
 		'</div><!--row end-->' +
