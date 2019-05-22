@@ -2,39 +2,39 @@ $(document).ready(function () {
 
 	//Widget Code
 	var bot = '<div class="chatCont" id="chatCont">' +
-		'<div class="bot_profile">' +
-		'<div class="headerBar">' +
-        '<img src="logohome.png" width="18%">' +
-        '</div>' +
-		'<div class="close">' +
-		'<img src="icon.png" width="4%">' +
-		'</div>' +
-		'</div><!--bot_profile end-->' +
+	'<div class="bot_profile">' +
+	'<div class="headerBar">' +
+	'<img src="logohome.png" width="18%">' +
+	'</div>' +
+	'<div class="close">' +
+	'<img src="icon.png" width="4%">' +
+	'</div>' +
+	'</div><!--bot_profile end-->' +
 
-		'<div id="result_div" class="resultDiv"></div>' +
-		'<div class="chatForm" id="chat-div">' +
-		'<div class="spinner">' +
-		'<div class="bounce1"></div>' +
-		'<div class="bounce2"></div>' +
-		'<div class="bounce3"></div>' +
-		'</div>' +
-		'<form>' +
-		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..." class="form-control bot-txt"/>' +
-		'<input type="button" id="klik" class="button" value="Kirim">' +
-		'</form>' +
-		'</div>' +
-		'</div><!--chatCont end-->' +
+	'<div id="result_div" class="resultDiv"></div>' +
+	'<div class="chatForm" id="chat-div">' +
+	'<div class="spinner">' +
+	'<div class="bounce1"></div>' +
+	'<div class="bounce2"></div>' +
+	'<div class="bounce3"></div>' +
+	'</div>' +
+	'<form>' +
+	'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..." class="form-control bot-txt"/>' +
+	'<input type="button" id="klik" class="button" value="Kirim">' +
+	'</form>' +
+	'</div>' +
+	'</div><!--chatCont end-->' +
 
-		'<div class="profile_div">' +
-		'<div class="row">' +
-		'<div class="col-hgt col-sm-offset-7">' +
-		'<img src="logoindi.png" class="img-circle img-profile">' +
-		'</div><!--col-hgt end-->' +
-		'<div class="col-hgt">' +
-		'</div>' +
-		'</div><!--col-hgt end-->' +
-		'</div><!--row end-->' +
-		'</div><!--profile_div end-->';
+	'<div class="profile_div">' +
+	'<div class="row">' +
+	'<div class="col-hgt col-sm-offset-7">' +
+	'<img src="logoindi.png" class="img-circle img-profile">' +
+	'</div><!--col-hgt end-->' +
+	'<div class="col-hgt">' +
+	'</div>' +
+	'</div><!--col-hgt end-->' +
+	'</div><!--row end-->' +
+	'</div><!--profile_div end-->';
 
 	$("mybot").html(bot);
 
@@ -69,6 +69,7 @@ $(document).ready(function () {
 				setUserResponse(text);
 				send(text);
 				e.preventDefault();
+				document.getElementById('chat-input').focus();
 				return false;
 			}
 		}
@@ -76,11 +77,12 @@ $(document).ready(function () {
 
 	// on input/text klik button--------------------------------------------------------------------------------------	
 	$('input[type="button"]').click(function (e) {
-    if (e.target) {
-        var text = $("#chat-input").val();
-		setUserResponse(text);
-		send(text);
-    }
+		if (e.target) {
+			var text = $("#chat-input").val();
+			setUserResponse(text);
+			send(text);
+			document.getElementById('chat-input').focus();
+		}
 	});
 
 	//------------------------------------------- Call the RASA API--------------------------------------
