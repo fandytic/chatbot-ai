@@ -4,8 +4,6 @@ $(document).ready(function () {
 	var bot = '<div class="chatCont" id="chatCont">' +
 		'<div class="bot_profile">' +
 		'<div class="headerBar">' +
-        //'<div class="user-photo"><img src="logoindi.png"></div>' +
-        //'<p class="title">IndiHome</p>' +
         '<img src="logohome.png" width="18%">' +
         '</div>' +
 		'<div class="close">' +
@@ -80,22 +78,13 @@ $(document).ready(function () {
 		}
 	});
 
-	// on input/text enter--------------------------------------------------------------------------------------	
-	$('#klik').click(function (e) {
-		var keyCode = e.keyCode || e.which;
-		var text = $("#chat-input").val();
-		if (keyCode === 13) {
-			if (text == "" || $.trim(text) == '') {
-				e.preventDefault();
-				return false;
-			} else {
-				$("#chat-input").blur();
-				setUserResponse(text);
-				send(text);
-				e.preventDefault();
-				return false;
-			}
-		}
+	// on input/text klik button--------------------------------------------------------------------------------------	
+	$('input[type="button"]').click(function (e) {
+    if (e.target) {
+        var text = $("#chat-input").val();
+		setUserResponse(text);
+		send(text);
+    }
 	});
 
 	//------------------------------------------- Call the RASA API--------------------------------------
