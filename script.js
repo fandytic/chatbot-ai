@@ -19,11 +19,8 @@ $(document).ready(function () {
 		'<div class="bounce3"></div>' +
 		'</div>' +
 		'<form>' +
-		//'<div class="form-control bot-txt">' +
 		'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..." class="form-control bot-txt"/>' +
-		//'<button class="button" id="chat-input">Kirim</button>' +
 		'<input type="button" id="klik" class="button" value="Kirim">' +
-		//'</div>' +
 		'</form>' +
 		'</div>' +
 		'</div><!--chatCont end-->' +
@@ -34,7 +31,6 @@ $(document).ready(function () {
 		'<img src="logoindi.png" class="img-circle img-profile">' +
 		'</div><!--col-hgt end-->' +
 		'<div class="col-hgt">' +
-		//'<div class="chat-txt">' +
 		'</div>' +
 		'</div><!--col-hgt end-->' +
 		'</div><!--row end-->' +
