@@ -122,7 +122,7 @@ $(document).ready(function () {
 		setTimeout(function () {
 			if ($.trim(val) == '' || val == 'error') { //if there is no response from bot or there is some error
 				val = 'Maaf server tidak merespon'
-				var BotResponse = '<p class="botResult">' + val + '</p><div class="clearfix"></div>';
+				var BotResponse = '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message">' + val + '</p></div>';
 				$(BotResponse).appendTo('#result_div');
 			} else {
 
@@ -146,7 +146,7 @@ $(document).ready(function () {
 
 	//------------------------------------- Set user response in result_div ------------------------------------
 	function setUserResponse(val) {
-		var UserResponse = '<p class="userEnteredText">' + val + '</p><div class="clearfix"></div>';
+		var UserResponse = '<div class="chat self"><p class="chat-message">' + val + '</p></div>';
 		$(UserResponse).appendTo('#result_div');
 		$("#chat-input").val('');
 		scrollToBottomOfResults();

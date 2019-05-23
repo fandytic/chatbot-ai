@@ -467,3 +467,47 @@ mybot .suggestion span:last-child {
     overflow: hidden;
 }
 /* Header Chat End */
+
+.chat {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.user-photo img{
+    padding: 0px;
+    width: 100%;
+}
+
+.chat .chat-message {
+    padding: 11px;
+    margin: 5px 10px 0;
+    font-size: 12px;
+}
+
+.user-photo {
+    width: 48px;
+    height: 48px;
+    background: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.friend .chat-message {
+    color: black;
+    width: auto;
+    max-width: 70%;
+    background: #fff;
+    border-radius: 20px 20px 20px 0;
+}
+
+.self .chat-message {
+    color: white;
+    max-width: 80%;
+    width: auto;
+    margin: 5px 0 5px auto;
+    border-radius: 20px 20px 0px 20px;
+    background: #ec1e37;
+    overflow-wrap: break-word;
+}
