@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 	'<div id="result_div" class="resultDiv"></div>' +
 	'<div class="chatForm" id="chat-div">' +
-	'<div class="spinner">' +
+	'<div class="lok spinner">' +
 	'<div class="bounce1"></div>' +
 	'<div class="bounce2"></div>' +
 	'<div class="bounce3"></div>' +
@@ -77,9 +77,15 @@ $(document).ready(function () {
 	$('input[type="button"]').click(function (e) {
 		if (e.target) {
 			var text = $("#chat-input").val();
-			setUserResponse(text);
-			send(text);
-			document.getElementById('chat-input').focus();
+			if (text == "" || $.trim(text) == '') {
+				e.preventDefault();
+				return false;
+			} else {
+				setUserResponse(text);
+				send(text);
+				document.getElementById('chat-input').focus();
+				return false;
+			}
 		}
 	});
 
@@ -128,9 +134,9 @@ $(document).ready(function () {
 				var msg = "";
 				for (var i = 0; i < val.length; i++) {
 					if (val[i]["image"]) { //check if there are any images
-						msg += '<p class="botResult"><a href="' + val[i].image + '" target="_blank"><img  width="200" height="124" src="' + val[i].image + '"/></a></p><div class="clearfix"></div>';
+						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message"><a href="' + val[i].image + '" target="_blank"><img  width="200" height="124" src="' + val[i].image + '"/></a></p></div>';
 					} else {
-						msg += '<p class="botResult">' + val[i].text + '</p><div class="clearfix"></div>';
+						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message">' + val[i].text + '</p></div>';
 					}
 				}
 				BotResponse = msg;
