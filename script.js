@@ -18,10 +18,8 @@ $(document).ready(function () {
 	'<div class="bounce2"></div>' +
 	'<div class="bounce3"></div>' +
 	'</div>' +
-	'<form>' +
 	'<input type="text" id="chat-input" autocomplete="off" placeholder="Tulis pesan..." class="form-control bot-txt"/>' +
 	'<input type="button" id="klik" class="button" value="Kirim">' +
-	'</form>' +
 	'</div>' +
 	'</div><!--chatCont end-->' +
 
