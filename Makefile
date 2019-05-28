@@ -19,13 +19,13 @@ train-nlu:
 	python -m rasa_nlu.train -c nlu_tensorflow.yml --fixed_model_name current --data data/nlu/ -o models --project nlu --verbose
 
 train-core:
-	python3.6 -m rasa_core.train -d domain.yml -s data/core/stories.md -o models/dialogue
+	python -m rasa_core.train -d domain.yml -s data/core/stories.md -o models/dialogue
 
 run:
 	python -m rasa_core.run --enable_api -d models/dialogue -u models/nlu/default/indi_nlu --debug --endpoints endpoints.yml --cors "*"
 
 visualize:
-	python3 -m rasa_core.visualize -s data/core/ -d domain.yml -o story_graph.png
+	python -m rasa_core.visualize -s data/core/ -d domain.yml -o story_graph.png
 
 train-online:
 	python -m rasa_core.train -u models/nlu/default/indi_nlu --online --core models/dialogue/
