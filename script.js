@@ -134,7 +134,7 @@ $(document).ready(function () {
 				var msg = "";
 				for (var i = 0; i < val.length; i++) {
 					if (val[i]["image"]) { //check if there are any images
-						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message"><a href="' + val[i].image + '" target="_blank"><img  width="200" height="124" src="' + val[i].image + '"/></a></p></div>';
+						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message"><a class="example-image-link" href="' + val[i].image + '" data-lightbox="example-1"><img class="example-image"  width="200" height="124" src="' + val[i].image + '" alt="image-1"/></a></p></div>';
 					} else {
 						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message">' + val[i].text + '</p></div>';
 					}
