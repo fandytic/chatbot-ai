@@ -1,19 +1,5 @@
 # chatbot-ai
-Chatbot using Sara
-
-.PHONY: clean test lint
-
-TEST_PATH=./
-
-help:
-	@echo "    train-nlu"
-	@echo "        Train the natural language understanding using Rasa NLU."
-	@echo "    train-core"
-	@echo "        Train a dialogue model using Rasa core."
-	@echo "    run-cmdline"
-	@echo "        Starts the bot on the command line"
-	@echo "    visualize"
-	@echo "        Saves the story graphs into a file"
+Chatbot interface using Sara
 
 run-actions:
 	python -m rasa_core_sdk.endpoint --actions actions
