@@ -4,10 +4,10 @@ $(document).ready(function () {
 	var bot = '<div class="chatCont" id="chatCont">' +
 	'<div class="bot_profile">' +
 	'<div class="headerBar">' +
-	'<img src="logohome.png" width="18%">' +
+	'<img src="images/logohome.png" width="18%">' +
 	'</div>' +
 	'<div class="close">' +
-	'<img src="icon.png" width="4%">' +
+	'<img src="images/icon.png" width="4%">' +
 	'</div>' +
 	'</div><!--bot_profile end-->' +
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
 	'<div class="profile_div">' +
 	'<div class="row">' +
 	'<div class="col-hgt col-sm-offset-7">' +
-	'<img src="logoindi.png" class="img-circle img-profile">' +
+	'<img src="images/logoindi.png" class="img-circle img-profile">' +
 	'</div><!--col-hgt end-->' +
 	'<div class="col-hgt">' +
 	'</div>' +
@@ -126,7 +126,7 @@ $(document).ready(function () {
 		setTimeout(function () {
 			if ($.trim(val) == '' || val == 'error') { //if there is no response from bot or there is some error
 				val = 'Maaf server tidak merespon'
-				var BotResponse = '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message">' + val + '</p></div>';
+				var BotResponse = '<div class="chat friend"><div class="user-photo"><img src="images/logoindi2.png"></div><p class="chat-message">' + val + '</p></div>';
 				$(BotResponse).appendTo('#result_div');
 			} else {
 
@@ -134,9 +134,9 @@ $(document).ready(function () {
 				var msg = "";
 				for (var i = 0; i < val.length; i++) {
 					if (val[i]["image"]) { //check if there are any images
-						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message"><a class="example-image-link" href="' + val[i].image + '" data-lightbox="example-1"><img class="example-image"  width="200" height="124" src="' + val[i].image + '" alt="image-1"/></a></p></div>';
+						msg += '<div class="chat friend"><div class="user-photo"><img src="images/logoindi2.png"></div><p class="chat-message"><a class="example-image-link" href="' + val[i].image + '" data-lightbox="example-1"><img class="example-image"  width="200" height="124" src="' + val[i].image + '" alt="image-1"/></a></p></div>';
 					} else {
-						msg += '<div class="chat friend"><div class="user-photo"><img src="logoindi2.png"></div><p class="chat-message">' + val[i].text + '</p></div>';
+						msg += '<div class="chat friend"><div class="user-photo"><img src="images/logoindi2.png"></div><p class="chat-message">' + val[i].text + '</p></div>';
 					}
 				}
 				BotResponse = msg;
