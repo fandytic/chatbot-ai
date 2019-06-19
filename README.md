@@ -1,8 +1,8 @@
 # chatbot-ai
 Chatbot interface using Sara
 
-**run-actions:**
-	python -m rasa_core_sdk.endpoint --actions actions
+**run-actions:
+	python -m rasa_core_sdk.endpoint --actions actions**
 
 train-nlu:
 	python -m rasa_nlu.train -c nlu_tensorflow.yml --fixed_model_name current --data data/nlu/ -o models --project nlu --verbose
@@ -10,8 +10,8 @@ train-nlu:
 train-core:
 	python -m rasa_core.train -d domain.yml -s data/core/stories.md -o models/dialogue
 
-**run:**
-	python -m rasa_core.run --enable_api -d models/dialogue -u models/nlu/default/indi_nlu --debug --endpoints endpoints.yml --cors "*"
+**run:
+	python -m rasa_core.run --enable_api -d models/dialogue -u models/nlu/default/indi_nlu --debug --endpoints endpoints.yml --cors "*"**
 
 visualize:
 	python -m rasa_core.visualize -s data/core/ -d domain.yml -o story_graph.png
