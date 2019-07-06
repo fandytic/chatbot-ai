@@ -1,5 +1,9 @@
 $(document).ready(function () {
+	function generateID(){
+		return Math.floor(new Date().valueOf() * Math.random())
+	}
 
+	var senderID = generateID();
 	//Widget Code
 	var bot = '<div class="chatCont" id="chatCont">' +
 	'<div class="bot_profile">' +
@@ -98,7 +102,7 @@ $(document).ready(function () {
 				'Content-Type': 'application/json'
 			},
 			data: JSON.stringify({
-				"sender": "user",
+				"sender": senderID,
 				"message": text
 			}),
 			success: function (data, textStatus, xhr) {
